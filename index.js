@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 
 var charm = require('charm')(process.stdout)
 var keypress = require('keypress')(process.stdin)
