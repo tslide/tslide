@@ -36,6 +36,7 @@ process.stdin.resume()
 
 process.stdin.on('keypress', function (ch, key) {
 
+  if(!key) return
   if(key.ctrl && /c|q/.test(key.name))
     charm.reset(), process.exit(0)
   else if(key.name == 'left')
