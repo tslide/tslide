@@ -1,0 +1,22 @@
+{
+  "name": "tslide",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/tslide",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/tslide.git"
+  },
+  "dependencies": {
+    "keypress": "~0.1.0",
+    "charm": "~0.1.0",
+    "optimist": "~0.3.4"
+  },
+  "devDependencies": {
+    "tap": "0.3.0"
+  },
+  "scripts": {
+    "test": "tap test"
+  },
+  "author": "'Dominic Tarr' <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
