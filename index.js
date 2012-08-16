@@ -1,9 +1,13 @@
 #! /usr/bin/env node
 
+require('colors')
+
 var charm = require('charm')(process.stdout)
 var keypress = require('keypress')(process.stdin)
 var opts = require('optimist').argv
 var fs = require('fs')
+var iq = require('insert-queue')
+var js = require('hipster/highlight/javascript')
 
 var file = opts._[0]
 var text = require('fs').readFileSync(file, 'utf-8')
@@ -22,7 +26,7 @@ function show () {
     .reset()
     .position(1, mtop)
     .write(indent(slides[index], mleft))
-    .position(mleft, process.stdout.rows - 3)
+    .position(mleft, process.stdout.rows - 1)
 }
 var index = 0
 show(index)
@@ -61,7 +65,18 @@ function indent(slide, indent) {
   var space = ''
   while (indent--)
     space += ' '
+
+  var code = false
   return slide.split('\n').map(function (l) {
+    if(/^#/.test(l))
+      l = l.bold
+    if(/^```/.test(l))
+      code = !code
+    if(code) {
+      var q = iq(l)
+      js.highlight(q)
+      l = q.apply()
+    }
     return space + l
   }).join('\n')
 }

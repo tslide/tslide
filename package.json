@@ -9,7 +9,11 @@
   "dependencies": {
     "keypress": "~0.1.0",
     "charm": "~0.1.0",
-    "optimist": "~0.3.4"
+    "optimist": "~0.3.4",
+    "color": "~0.4.1",
+    "hipster": "~0.9.0",
+    "insert-queue": "0.0.4",
+    "colors": "~0.6.0-1"
   },
   "devDependencies": {
     "tap": "0.3.0"

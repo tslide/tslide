@@ -17,6 +17,16 @@ each slide is a section of a markdown document.
 
 "sections" are split at lines that start with `#`
 
+## crude js syntax highlighting
+
+``` js
+function didItWork() {
+
+  //wahey!
+}
+
+```
+
 ## Why?
 
 Because I am the sort of guy who will write his own 
