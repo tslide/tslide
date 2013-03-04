@@ -11,7 +11,7 @@ var js = require('hipster/highlight/javascript')
 
 var file = opts._[0]
 var text = require('fs').readFileSync(file, 'utf-8')
-var slides = require('./sections')(text)
+var slides = require('markdown-sections')(text)
 
 var mleft = 10
 var mtop  = 5
