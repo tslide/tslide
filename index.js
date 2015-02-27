@@ -45,9 +45,9 @@ process.stdin.on('keypress', function (ch, key) {
   if(!key) return
   if(key.ctrl && /c|q/.test(key.name))
     charm.reset(), process.exit(0)
-  else if(key.name == 'left')
+  else if(key.name == 'left' || key.name == 'h' || key.name == 'j')
     show(--index)
-  else if(key.name == 'right')
+  else if(key.name == 'right' || key.name == 'k' || key.name == 'l')
     show(index ++)
   else if(key.name == 'home')
     show(index = 0)
