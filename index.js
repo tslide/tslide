@@ -19,6 +19,8 @@ if(slides.length <= 1) {
 //console.log(slides)
 //return
 
+var highlight = opts.highlight !== false
+
 var mleft = 5
 var mtop  = 2
 
@@ -79,7 +81,7 @@ function indent(slide, indent) {
       l = l.bold
     if(/^```/.test(l))
       code = !code
-    if(code) {
+    if(code && highlight) {
       var q = iq(l)
       js.highlight(q)
       l = q.apply()
