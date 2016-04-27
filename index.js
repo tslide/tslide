@@ -4,10 +4,12 @@ require('colors')
 
 var charm = require('charm')(process.stdout)
 var keypress = require('keypress')(process.stdin)
-var opts = require('optimist').argv
+var opts = require('optimist').default('images', true).argv
 var fs = require('fs')
+var path = require('path')
 var iq = require('insert-queue')
 var js = require('hipster/highlight/javascript')
+var imgcat = require('ansi-escapes').image
 
 var file = opts._[0]
 var text = require('fs').readFileSync(file, 'utf-8')
@@ -16,24 +18,52 @@ if(slides.length <= 1) {
   console.error('markdown should be split into slides by --- (hdiv)')
   process.exit(1)
 }
-//console.log(slides)
-//return
 
 var highlight = opts.highlight !== false
 
 var mleft = 5
 var mtop  = 2
 
+function images (content) {
+  var pattern = /^!\[.*?\]\((.*)\)/mg
+  var notIterm = !/^iterm/i.test(process.env.TERM_PROGRAM)
+  var match
+  var image
+
+  if (notIterm) {
+    return content
+  }
+
+  while (match = pattern.exec(content)) {
+    try {
+      var url = path.join(__dirname, match[1])
+
+      image = imgcat(fs.readFileSync(url))
+      content = content.replace(match[0], image)
+    } catch (error) {
+      // Either file doesn't exist
+      // or terminal doesn't support images
+    }
+  }
+
+  return content;
+}
+
 function show () {
   if(index < 0) index = 0
   if(index >= slides.length) index = slides.length - 1
 
   var s = stats(slides[index])
+  var content = slides[index]
+
+  if (opts.images) {
+    content = images(content)
+  }
 
   charm
     .reset()
     .position(1, mtop)
-    .write(indent(slides[index], mleft))
+    .write(indent(content, mleft))
     .position(mleft, process.stdout.rows - 1)
 }
 var index = 0

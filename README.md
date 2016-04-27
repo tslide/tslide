@@ -1,7 +1,6 @@
 # tslide
 
-Terminal SlideDeck.
-  (for back end devs)
+> Terminal SlideDeck (for back end devs)
 
 ---
 
@@ -25,15 +24,47 @@ each slide is a section of a markdown document.
 
 ## crude js syntax highlighting
 
-``` js
-function didItWork() {
+```md
+# tslide
 
-  //wahey!
+## Code
+
+‘‘‘js
+function fibonacci (n) {
+  return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2)
 }
+‘‘‘
 
+---
 ```
 
-on by default, disable via `--no-highlight`
+![Demo Code](demo-code.png)
+
+This feature is on by default. Disable via `--no-highlight`.
+
+---
+
+# images
+
+[iTerm 2](https://www.iterm2.com) users can 
+take advantage of [its inline image feature](https://www.iterm2.com/images.html) and use 
+images in your slides.
+
+```md
+# tslide
+
+## Images
+
+![pizza](pizza.png)
+
+There's nothing a pizza can't fix.
+
+---
+```
+
+![Demo Images](demo-images.png)
+
+This feature is on by default. Disable via `--no-images`.
 
 ---
 
