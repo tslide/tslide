@@ -69,7 +69,10 @@ function show () {
     .reset()
     .position(1, mtop)
     .write(indent(content, mleft))
-    .position(mleft, process.stdout.rows - 1)
+
+  if (process.stdout.rows) {
+    charm.position(mleft, process.stdout.rows - 1)
+  }
 }
 var index = 0
 show(index)
