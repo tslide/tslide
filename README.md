@@ -68,6 +68,23 @@ This feature is on by default. Disable via `--no-images`.
 
 ---
 
+# emoji
+
+Most terminals can print unicode emoji, and others can print system bitmap emoji
+like macosx.
+
+```md
+# tslide
+
+## Emoji
+
+:sparkles:
+
+Magic!
+
+---
+```
+
 ## Why?
 
 Because I am the sort of guy who will write his own 

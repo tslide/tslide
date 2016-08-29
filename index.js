@@ -10,6 +10,7 @@ var path = require('path')
 var iq = require('insert-queue')
 var js = require('hipster/highlight/javascript')
 var imgcat = require('ansi-escapes').image
+var emojis = require('node-emoji')
 
 var file = opts._[0]
 if (!file) {
@@ -54,6 +55,10 @@ function images (content) {
   return content;
 }
 
+function emoji (content) {
+  return emojis.emojify(content)
+}
+
 function show () {
   if(index < 0) index = 0
   if(index >= slides.length) index = slides.length - 1
@@ -64,6 +69,8 @@ function show () {
   if (opts.images) {
     content = images(content)
   }
+
+  content = emoji(content)
 
   charm
     .reset()
