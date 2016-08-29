@@ -44,7 +44,7 @@ This feature is on by default. Disable via `--no-highlight`.
 
 ---
 
-# images
+## images
 
 [iTerm 2](https://www.iterm2.com) users can 
 take advantage of [its inline image feature](https://www.iterm2.com/images.html) and use 
@@ -68,7 +68,7 @@ This feature is on by default. Disable via `--no-images`.
 
 ---
 
-# emoji
+## emoji
 
 Most terminals can print unicode emoji, and others can print system bitmap emoji
 like macosx.
