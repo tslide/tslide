@@ -15,6 +15,9 @@ var emojis = require('node-emoji')
 var file = opts._[0]
 if (!file) {
   console.error('USAGE: tslide [markdown-file]')
+  console.error()
+  console.error('--highlight      Apply syntax highlighting (default true)')
+  console.error('--images         Inline images if supported (default true)')
   process.exit(1)
 }
 
