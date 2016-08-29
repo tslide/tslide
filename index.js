@@ -13,7 +13,6 @@ var imgcat = require('ansi-escapes').image
 var emojis = require('node-emoji')
 
 var file = opts._[0]
-var fildWd = path.dirname(file)
 if (!file) {
   console.error('USAGE: tslide [markdown-file]')
   process.exit(1)
@@ -43,7 +42,7 @@ function images (content) {
 
   while (match = pattern.exec(content)) {
     try {
-      var url = path.join(fildWd, match[1])
+      var url = path.join(path.dirname(file), match[1])
 
       image = imgcat(fs.readFileSync(url))
       content = content.replace(match[0], image)
