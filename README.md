@@ -1,11 +1,11 @@
 # tslide
 
-> Terminal SlideDeck (for back end devs)
+Terminal SlideDeck (for backend devs)
 
 ---
 
-Controls: 
-  * Left, Right: change slide.
+Controls:
+  * Left, Right, or HJKL: change slide.
   * Ctrl-C     : exit
 
 ---
@@ -16,9 +16,9 @@ Controls:
 tslide README.markdown
 ```
 
-each slide is a section of a markdown document.
-
-"sections" are split at lines that start with `#`
+each slide is a section of a markdown document,
+separated a line with `---` (markdown for horizontal rule `<hr>`)
+you will notice that this README.mb is a valid tslide markdown presentation.
 
 ---
 
@@ -35,8 +35,8 @@ function fibonacci (n) {
 }
 ‘‘‘
 
----
 ```
+---
 
 ![Demo Code](demo-code.png)
 
@@ -59,8 +59,8 @@ images in your slides.
 
 There's nothing a pizza can't fix.
 
----
 ```
+---
 
 ![Demo Images](demo-images.png)
 
@@ -82,13 +82,32 @@ like macosx.
 
 Magic!
 
----
 ```
+---
 
 ## Why?
 
-Because I am the sort of guy who will write his own 
-presentation software two hours before his talk.
+I initially wrote this 2 hours before a talk I had to give.
+since then, I have given many presentations with it,
+and received a number of contributions that has made tslide actually pretty good,
+
+---
+
+## thanks to
+
+* [@mmaleki](https://github.com/mmaleki)
+* [@yoshuawuyts](https://github.com/yoshuawuyts)
+* [@rafaelrinaldi](https://github.com/rafaelrinaldi)
+* [@noffle](https://github.com/noffle)
+* [@loklaan](https://github.com/loklaan)
+
+for all the pull requests!
+
+---
+
+## cool links
+
+* [xslide](https://github.com/substack/xslide) a tslide compatible presenter in the browser.
 
 ---
 
@@ -96,10 +115,4 @@ presentation software two hours before his talk.
 
 MIT
 
----
 
-## Any Questions?
-
-direct your queries to:
-
-`/^(@|https://github.com/|http://)?dominictarr(.com)?$/`
