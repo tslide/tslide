@@ -93,15 +93,15 @@ process.stdin.resume()
 process.stdin.on('keypress', function (ch, key) {
 
   if(!key) return
-  if(key.ctrl && /c|q/.test(key.name))
+  if((key.ctrl && /c|q/.test(key.name)) || key.name === 'escape')
     charm.reset(), process.exit(0)
-  else if(key.name == 'left' || key.name == 'h' || key.name == 'j')
+  else if(key.name === 'left' || key.name === 'h' || key.name === 'j' || key.name === 'pageup')
     show(--index)
-  else if(key.name == 'right' || key.name == 'k' || key.name == 'l')
+  else if(key.name === 'right' || key.name === 'k' || key.name === 'l' || key.name === 'pagedown')
     show(index ++)
-  else if(key.name == 'home')
+  else if(key.name === 'home')
     show(index = 0)
-  else if(key.name == 'end')
+  else if(key.name === 'end')
     show(index = slides.length - 1)
 })
 
