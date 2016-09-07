@@ -5,8 +5,10 @@ Terminal SlideDeck (for backend devs)
 ---
 
 Controls:
-  * Left, Right, or HJKL: change slide.
-  * Ctrl-C     : exit
+  * Left, Right, or HJKL, Page Up, Page Down: change slide.
+  * Ctrl-C or Esc    : exit
+
+You can alternatively use a presenter. `tslide` works with the Logitech R800 and R400 out of the box.
 
 ---
 
@@ -100,6 +102,7 @@ and received a number of contributions that has made tslide actually pretty good
 * [@rafaelrinaldi](https://github.com/rafaelrinaldi)
 * [@noffle](https://github.com/noffle)
 * [@loklaan](https://github.com/loklaan)
+* [@dkundel](https://github.com/dkundel)
 
 for all the pull requests!
 
