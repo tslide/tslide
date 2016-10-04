@@ -20,7 +20,7 @@ tslide README.markdown
 
 each slide is a section of a markdown document,
 separated a line with `---` (markdown for horizontal rule `<hr>`)
-you will notice that this README.md is a valid tslide markdown presentation.
+you will notice that this [README.md](https://raw.githubusercontent.com/tslide/tslide/master/README.md) is a valid tslide markdown presentation.
 
 ---
 
