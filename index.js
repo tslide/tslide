@@ -126,7 +126,7 @@ function indent(slide, indent) {
   var code = false
   var inlineBold = /\*\*(.*)\*\*/g
   return slide.split('\n').map(function (l) {
-    if(/^#/.test(l))
+    if(/^#/.test(l) && !code)
       l = l.bold
     if(/^```/.test(l))
       code = !code
