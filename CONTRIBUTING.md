@@ -4,7 +4,7 @@
 
 ## What?
 
-Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit.
+Individuals making significant and valuable contributions are given full ownership of the project to contribute as they see fit. This includes full commit access and ability to add new contributors.
 
 ## Rules
 
