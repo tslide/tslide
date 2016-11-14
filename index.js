@@ -35,7 +35,8 @@ marked.setOptions({
     },
     highlightOptions: {
       theme: 'tomorrow-night'
-    }
+    },
+    tab: 2
   })
 })
 
