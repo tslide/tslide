@@ -34,10 +34,12 @@ marked.setOptions({
       return chalk.magenta.underline.bold(text) + '\n';
     },
     highlightOptions: {
-      theme: 'tomorrow-night'
+      theme: require('cardinal/themes/simple')
     },
     tab: 2
-  })
+  },  {
+      theme: require('cardinal/themes/simple')
+    })
 })
 
 var text = require('fs').readFileSync(file, 'utf-8')
@@ -172,3 +174,4 @@ function legacyStyling(slide, space) {
     return space + l
   }).join('\n')
 }
+
